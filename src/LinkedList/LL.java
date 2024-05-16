@@ -76,6 +76,19 @@ public void insertIndex(int val, int index) {
 
     size++;
 }
+public void removeDuplicates(){
+        Node temp=head;
+        while(temp.next!=null){
+            if(temp.val==temp.next.val){
+                temp.next=temp.next.next;
+                size--;
+            }else{
+                temp=temp.next;
+            }
+        }
+        tail=temp;
+        tail.next=null;
+}
     public int deleteFirst() {
         int val = head.val;
         head = head.next;
@@ -131,6 +144,22 @@ public void insertIndex(int val, int index) {
             curr=curr.next;
         }
         return -1;
+    }
+    public void rotateLL(){
+        Node curr=head;
+        while(curr.next.next!=null){
+            curr=curr.next;
+        }
+        Node temp=curr.next;
+        temp.next=head;
+        curr.next=null;
+        head=temp;
+
+    }
+    public void rotate(int n){
+        for(int i=0;i<n;i++){
+            rotateLL();
+        }
     }
 
 

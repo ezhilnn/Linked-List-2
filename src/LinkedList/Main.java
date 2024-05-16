@@ -1,4 +1,5 @@
 package LinkedList;
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
         LL list=new LL();
@@ -10,6 +11,9 @@ public class Main {
         list.insertLast(17);
         list.insertLast(15);
         list.insertIndex(69,4);
+        list.display();
+        list.rotate(2);
+        System.out.println("reverse");
         list.display();
         System.out.println(list.find(17));
         DLL dlist=new DLL();
